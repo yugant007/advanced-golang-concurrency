@@ -18,10 +18,10 @@ var wg sync.WaitGroup
 
 var printSum = func(v1, v2 *value) {
 	defer wg.Done()
-	v1.mu.Lock()
-	defer v1.mu.Unlock()
+	v1.mu.Lock() // 1
+	defer v1.mu.Unlock() // 2
 
-	time.Sleep(2 * time.Second)
+	time.Sleep(2 * time.Second) // 3
 	v2.mu.Lock()
 	defer v2.mu.Unlock()
 
