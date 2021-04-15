@@ -107,5 +107,11 @@ Follow example-1.go file
 
 The sync Package --->
 
-
-
+The sync package contains the concurrency primitives that are most useful for low-level memory access synchronization.
+These operations have their use—mostly in small scopes such as a struct. It will be up to you to decide
+when memory access synchronization is appropriate.
+Follow example-2.go file
+WaitGroup ->
+WaitGroup is a great way to wait for a set of concurrent operations to complete when you either don’t care
+about the result of the concurrent operation, or you have other means of collecting their results.
+If neither of those conditions are true, I suggest you use channels and a select statement instead.
